@@ -1,6 +1,6 @@
 #  YouAssist Creator - Assistente inteligente para creators da YouShop
 
-Gerador de kits de divulgação para creators da YouShop. A partir de um formulário simples, cria roteiro de vídeo, legenda, e-mail e ângulo de conteúdo personalizados para o criador.
+Ferramentas geradora de kits de divulgação para creators da YouShop. A partir de um formulário simples, cria roteiro de vídeo, legenda, e-mail e ângulo de conteúdo personalizados para o criador. A ferramenta também propoem filtragem de produtos enganosos.
 
 ![screenshot](images/tela.png)
 
