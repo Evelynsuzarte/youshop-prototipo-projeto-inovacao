@@ -2,7 +2,7 @@
 
 Gerador de kits de divulgação para creators da YouShop. A partir de um formulário simples, cria roteiro de vídeo, legenda, e-mail e ângulo de conteúdo personalizados para o criador.
 
-![screenshot](images\tela.png.png)
+![screenshot](images/tela.png)
 
 ## Como usar
 
