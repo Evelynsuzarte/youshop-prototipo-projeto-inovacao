@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouAssist Creator IA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">🤖</div>
+  <div>
+    <h1>YouAssist Creator IA<h6>Assistente inteligente para creators da YouShop</h6></h1>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h2>Kit de postagem</h2>
+    <p>Gere seu kit de materiais de divulgação únicos para cada nicho, postagem e produto.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📦 Produto</div>
+
+    <div class="grid-2">
+      <div class="field" style="grid-column: span 2;">
+        <label>Selecione o produto</label>
+        <select id="product_key">
+          <option value="financas">Método Finanças Pro — sair do vermelho em 90 dias</option>
+          <option value="marketing">Fórmula de Lançamento Digital — fazer a primeira venda em 30 dias</option>
+          <option value="saude">Desafio 30 dias crescimento capilar</option>
+        </select>
+
+      </div>
+      <div class="field" style="grid-column: span 2;">
+        <label>Preço que você vai divulgar (R$)</label>
+        <input type="number" id="product_price" placeholder="Ex: 197,00" />
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="card">
+
+    <div class="card-title">👤Seu perfil</div>
+
+    <div class="grid-2">
+      <div class="field" style="grid-column: span 2;">
+        <label>Seu nome</label>
+        <input type="text" id="creator_name" placeholder="Ex: Ana Lima" />
+      </div>
+
+      <div class="field" style="grid-column: span 2;">
+        <label>Público-alvo</label>
+        <input type="text" id="creator_audience" placeholder="Ex: Autônomos de 25-35 anos" />
+      </div>
+
+      <div class="field">
+        <label>Rede principal</label>
+        <select id="creator_network">
+          <option value="instagram">Instagram / Reels</option>
+          <option value="tiktok">TikTok</option>
+          <option value="youtube">Youtube</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Tom de voz</label>
+        <select id="creator_tone">
+          <option value="descontraido">Descontraído e divertido</option>
+          <option value="educativo">Educativo e confiável</option>
+          <option value="jornalistico">Sério e jornalístico</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-generate" id="btn" onclick="generate()">
+    ✨Gerar Kit Exclusivo de Divulgação
+  </button>
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>Analisando perfil e gerando ângulo único...</p>
+  </div>
+
+  <div class="error-box" id="error"></div>
+
+  <div id="results">
+    <div class="card" style="margin-top: 24px;">
+      <div class="badge">✅ Kit gerado com sucesso</div>
+
+      <div class="angle-box">
+        <h3 id="res-angle"></h3>
+        <p id="res-justificativa"></p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" onclick="mudarabas('video', this)">🎬Roteiro de Vídeo</button>
+        <button class="tab" onclick="mudarabas('legenda', this)">📝Legenda</button>
+        <button class="tab" onclick="mudarabas('email', this)">📧E-mail</button>
+      </div>
+
+      <div id="tab-video" class="tab-content active">
+        <div class="content-box" id="res-video">
+          <button class="copy-btn" onclick="copiarTexto('res-video')">Copiar</button>
+        </div>
+      </div>
+      <div id="tab-legenda" class="tab-content">
+        <div class="content-box" id="res-legenda">
+          <button class="copy-btn" onclick="copiarTexto('res-legenda')">Copiar</button>
+        </div>
+      </div>
+      <div id="tab-email" class="tab-content">
+        <div class="content-box" id="res-email">
+          <button class="copy-btn" onclick="copiarTexto('res-email')">Copiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+  
+</body>
+</html>
